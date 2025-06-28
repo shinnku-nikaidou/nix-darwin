@@ -21,8 +21,20 @@
 
       pkgs = import nixpkgs {
         inherit system;
-        config.allowUnfree = true; # This should allow unfree packages
-        overlays = [ fenix.overlays.default ];
+        config.allowUnfree = true;
+        overlays = [
+          fenix.overlays.default
+          (final: prev: {
+            python313 = prev.python313.override {
+              packageOverrides = pyf: pyp: {
+                accelerate = pyp.accelerate.overridePythonAttrs (_: {
+                  doCheck = false;
+                });
+              };
+            };
+          })
+        ];
+
       };
 
       rustToolchain = fenix.packages.${system}.complete.toolchain;
