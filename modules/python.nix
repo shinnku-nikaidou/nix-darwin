@@ -1,23 +1,46 @@
 { pkgs, ... }:
 
 let
-  pythonEnv = pkgs.python312.withPackages (
+  pythonEnv = pkgs.python313.withPackages (
     ps: with ps; [
       numpy
       pandas
       matplotlib
       scikit-learn
       sympy
+      uvicorn
+      falcon
+      flask
+      fastapi
+      requests
+      httpx
+
+      # pytorch
       ps.torch
       ps.torchvision
       ps.torchaudio
+      tensorboardx
+
+      #  langchain
+      langchain
+      langchain-community
+      langchain-chroma
+      langchain-openai
+      langchain-ollama
+      # langchain-huggingface # it will compile fail due to issue: https://github.com/pytorch/pytorch/issues/150121
+      # waiting to be fixed
+
+      # google
+      google
+      google-genai
+      google-generativeai
     ]
   );
 in
 {
   environment.systemPackages = [
     pythonEnv
-    pkgs.python312Packages.pip
-    pkgs.python312Packages.virtualenv
+    pkgs.python313Packages.pip
+    pkgs.python313Packages.virtualenv
   ];
 }
