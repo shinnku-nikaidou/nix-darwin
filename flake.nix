@@ -97,6 +97,13 @@
 
                 rustToolchain
                 texliveFull
+
+                # For development
+                jdk24
+                ocaml
+                mono
+                go
+                php
               ];
 
               environment.variables.RUST_SRC_PATH = "${rustToolchain}/lib/rustlib/src/rust/library";

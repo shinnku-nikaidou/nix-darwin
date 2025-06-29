@@ -36,7 +36,6 @@ let
       langchain-huggingface # it will compile fail due to issue: https://github.com/pytorch/pytorch/issues/150121
 
       # google
-      google
       google-genai
       google-generativeai
     ]
