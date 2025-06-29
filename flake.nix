@@ -41,7 +41,12 @@
 
       goToolchain = pkgs.buildEnv {
         name = "go-toolchain";
-        paths = with pkgs; [ go gopls gotools delve ];
+        paths = with pkgs; [
+          go
+          gopls
+          gotools
+          delve
+        ];
       };
 
       baseModules = [
@@ -90,6 +95,10 @@
 
                 htop
                 btop
+                fastfetch
+
+                unar
+                p7zip
 
                 scrcpy
                 nodejs_24
