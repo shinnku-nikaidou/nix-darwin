@@ -83,7 +83,9 @@
                 nodejs_22
                 pnpm
                 ffmpeg-full
+                iperf
                 rustToolchain
+                texliveFull
               ];
 
               environment.variables.RUST_SRC_PATH = "${rustToolchain}/lib/rustlib/src/rust/library";
