@@ -39,6 +39,11 @@
 
       rustToolchain = fenix.packages.${system}.complete.toolchain;
 
+      goToolchain = pkgs.buildEnv {
+        name = "go-toolchain";
+        paths = with pkgs; [ go gopls gotools delve ];
+      };
+
       baseModules = [
         {
           nix.settings = {
@@ -70,9 +75,11 @@
     {
       darwinConfigurations."shinnkus-MacBook-Pro" = nix-darwin.lib.darwinSystem {
         inherit system pkgs;
+        specialArgs = { inherit goToolchain; };
         modules = baseModules ++ [
           ./modules/python.nix
           ./modules/haskell.nix
+          ./modules/go.nix
           (
             { ... }:
             {
@@ -102,7 +109,6 @@
                 jdk24
                 ocaml
                 mono
-                go
                 php
               ];
 
@@ -113,8 +119,12 @@
       };
 
       devShells.${system}.default = pkgs.mkShell {
-        packages = [ rustToolchain ];
+        packages = [
+          rustToolchain
+          goToolchain
+        ];
         RUST_SRC_PATH = "${rustToolchain}/lib/rustlib/src/rust/library";
+        GOPATH = "$HOME/go";
       };
     };
 }
