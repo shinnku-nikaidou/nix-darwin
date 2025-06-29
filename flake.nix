@@ -85,6 +85,7 @@
           ./modules/python.nix
           ./modules/haskell.nix
           ./modules/go.nix
+          ./modules/cpp.nix
           (
             { ... }:
             {
