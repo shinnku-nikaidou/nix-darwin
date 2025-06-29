@@ -11,7 +11,6 @@ let
       vector
       unordered-containers
       aeson
-      hdr-json
     ]
   );
 
