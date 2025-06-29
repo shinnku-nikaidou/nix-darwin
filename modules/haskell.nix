@@ -5,6 +5,8 @@ let
 
   myPackages = hp.ghcWithPackages (
     hs: with hs; [
+      haskell-language-server
+
       # Core data structures and text processing
       text
       bytestring
@@ -87,6 +89,7 @@ in
     hp.stack
     hp.hoogle
     hp.stylish-haskell
+    # hp.haskell-language-server
   ];
 
   environment.variables.STACK_ROOT = "$HOME/.stack";
