@@ -1,8 +1,7 @@
 { pkgs, ... }:
 
 let
-  ghcVersion = pkgs.haskell.compiler.ghc98;
-  hp = pkgs.haskell.packages.${ghcVersion};
+  hp = pkgs.haskell.packages.ghc98;
 
   myPackages = hp.ghcWithPackages (
     hs: with hs; [
