@@ -77,14 +77,24 @@
             { ... }:
             {
               environment.systemPackages = with pkgs; [
-                vim
                 nixfmt-rfc-style
+                helix
+                vim
+
                 htop
+                btop
+
                 scrcpy
-                nodejs_22
-                pnpm
+                nodejs_24
+                nodejs_24.pkgs.pnpm
+                nodejs_24.pkgs.yarn
+                bun
+
                 ffmpeg-full
                 iperf
+
+                gemini-cli
+
                 rustToolchain
                 texliveFull
               ];
