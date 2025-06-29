@@ -72,6 +72,7 @@
         inherit system pkgs;
         modules = baseModules ++ [
           ./modules/python.nix
+          ./modules/haskell.nix
           (
             { ... }:
             {
