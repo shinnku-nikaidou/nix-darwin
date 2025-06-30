@@ -85,7 +85,7 @@
           ./modules/python.nix
           ./modules/haskell.nix
           ./modules/go.nix
-          ./modules/cpp.nix
+          # ./modules/cpp.nix # this is not recommended for macOS
           (
             { ... }:
             {
@@ -93,6 +93,8 @@
                 nixfmt-rfc-style
                 helix
                 vim
+                rclone
+                clang-tools
 
                 htop
                 btop
