@@ -109,6 +109,9 @@
                 nodejs_24.pkgs.yarn
                 bun
 
+                postgresql
+                redis
+
                 ffmpeg-full
                 iperf
 
