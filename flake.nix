@@ -95,6 +95,7 @@
                 vim
                 rclone
                 clang-tools
+                protobuf
 
                 htop
                 btop
