@@ -11,7 +11,6 @@ let
       uvicorn
       falcon
       flask
-      fastapi
       requests
       httpx
       ipython
@@ -24,16 +23,16 @@ let
       tensorboardx
 
       # large language models
-      sentence-transformers
-      transformers
+      # sentence-transformers
+      # transformers
 
-      #  langchain
-      langchain
-      langchain-community
-      langchain-chroma
-      langchain-openai
-      langchain-ollama
-      langchain-huggingface # it will compile fail due to issue: https://github.com/pytorch/pytorch/issues/150121
+      # #  langchain
+      # langchain
+      # langchain-community
+      # langchain-chroma
+      # langchain-openai
+      # langchain-ollama
+      # langchain-huggingface # it will compile fail due to issue: https://github.com/pytorch/pytorch/issues/150121
 
       # google
       google-genai

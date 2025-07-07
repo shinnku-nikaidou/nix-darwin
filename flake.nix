@@ -24,15 +24,6 @@
         config.allowUnfree = true;
         overlays = [
           fenix.overlays.default
-          (final: prev: {
-            python313 = prev.python313.override {
-              packageOverrides = pyf: pyp: {
-                accelerate = pyp.accelerate.overridePythonAttrs (_: {
-                  doCheck = false;
-                });
-              };
-            };
-          })
         ];
 
       };
