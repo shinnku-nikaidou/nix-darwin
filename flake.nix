@@ -110,16 +110,13 @@
                 nodejs_24.pkgs.yarn
                 bun
 
-                postgresql
-                redis
-
                 ffmpeg-full
                 iperf
 
                 gemini-cli
 
                 rustToolchain
-                texliveFull
+                # texliveFull
 
                 # For development
                 jdk24
