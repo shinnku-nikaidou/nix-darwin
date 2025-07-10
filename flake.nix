@@ -85,8 +85,11 @@
                 helix
                 vim
                 rclone
-                clang-tools
                 protobuf
+
+                clang-tools
+                cmake
+                ninja
 
                 htop
                 btop
@@ -107,7 +110,7 @@
                 gemini-cli
 
                 rustToolchain
-                # texliveFull
+                texliveFull
 
                 # For development
                 jdk24
