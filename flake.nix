@@ -30,16 +30,6 @@
 
       rustToolchain = fenix.packages.${system}.complete.toolchain;
 
-      goToolchain = pkgs.buildEnv {
-        name = "go-toolchain";
-        paths = with pkgs; [
-          go
-          gopls
-          gotools
-          delve
-        ];
-      };
-
       baseModules = [
         {
           nix.settings = {
@@ -71,12 +61,10 @@
     {
       darwinConfigurations."shinnkus-MacBook-Pro" = nix-darwin.lib.darwinSystem {
         inherit system pkgs;
-        specialArgs = { inherit goToolchain; };
         modules = baseModules ++ [
           ./modules/python.nix
           ./modules/haskell.nix
           ./modules/go.nix
-          # ./modules/cpp.nix # this is not recommended for macOS
           (
             { ... }:
             {
@@ -99,9 +87,9 @@
                 p7zip
 
                 scrcpy
-                nodejs_24
-                nodejs_24.pkgs.pnpm
-                nodejs_24.pkgs.yarn
+                nodejs
+                pnpm
+                yarn
                 bun
 
                 ffmpeg-full
@@ -128,7 +116,10 @@
       devShells.${system}.default = pkgs.mkShell {
         packages = [
           rustToolchain
-          goToolchain
+          pkgs.go
+          pkgs.gopls
+          pkgs.gotools
+          pkgs.delve
         ];
         RUST_SRC_PATH = "${rustToolchain}/lib/rustlib/src/rust/library";
         GOPATH = "$HOME/go";
