@@ -75,9 +75,9 @@
                 rclone
                 protobuf
 
-                clang-tools
-                cmake
-                ninja
+                # clang-tools
+                # cmake
+                # ninja
 
                 htop
                 btop
@@ -101,6 +101,7 @@
                 texliveFull
 
                 # For development
+                uv
                 jdk24
                 ocaml
                 mono
