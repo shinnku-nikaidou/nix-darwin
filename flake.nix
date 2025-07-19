@@ -74,6 +74,7 @@
                 vim
                 rclone
                 protobuf
+                parquet-tools
 
                 # clang-tools
                 # cmake
@@ -104,7 +105,6 @@
                 uv
                 jdk24
                 ocaml
-                mono
                 php
               ];
 
