@@ -75,6 +75,7 @@
                 rclone
                 protobuf
                 parquet-tools
+                wrangler
 
                 # clang-tools
                 # cmake
