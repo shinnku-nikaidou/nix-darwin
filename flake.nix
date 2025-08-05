@@ -77,7 +77,7 @@
                 parquet-tools
                 wrangler
 
-                # clang-tools
+                clang-tools
                 # cmake
                 # ninja
 
