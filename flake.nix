@@ -98,6 +98,7 @@
                 iperf
 
                 gemini-cli
+                claude-code
 
                 rustToolchain
                 texliveFull
