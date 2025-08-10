@@ -88,7 +88,7 @@
                 unar
                 p7zip
 
-                scrcpy
+                # scrcpy
                 nodejs
                 pnpm
                 yarn
