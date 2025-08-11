@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    fenix.url = "github:nix-community/fenix";
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -12,7 +11,6 @@
     inputs@{
       self,
       nixpkgs,
-      fenix,
       nix-darwin,
       ...
     }:
@@ -22,13 +20,8 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [
-          fenix.overlays.default
-        ];
-
+        overlays = [];
       };
-
-      rustToolchain = fenix.packages.${system}.complete.toolchain;
 
       baseModules = [
         {
@@ -75,7 +68,6 @@
                 rclone
                 protobuf
                 parquet-tools
-                wrangler
 
                 clang-tools
                 # cmake
@@ -88,7 +80,6 @@
                 unar
                 p7zip
 
-                # scrcpy
                 nodejs
                 pnpm
                 yarn
@@ -100,7 +91,6 @@
                 gemini-cli
                 claude-code
 
-                rustToolchain
                 texliveFull
 
                 # For development
@@ -109,8 +99,6 @@
                 ocaml
                 php
               ];
-
-              environment.variables.RUST_SRC_PATH = "${rustToolchain}/lib/rustlib/src/rust/library";
             }
           )
         ];
@@ -118,13 +106,11 @@
 
       devShells.${system}.default = pkgs.mkShell {
         packages = [
-          rustToolchain
           pkgs.go
           pkgs.gopls
           pkgs.gotools
           pkgs.delve
         ];
-        RUST_SRC_PATH = "${rustToolchain}/lib/rustlib/src/rust/library";
         GOPATH = "$HOME/go";
       };
     };
