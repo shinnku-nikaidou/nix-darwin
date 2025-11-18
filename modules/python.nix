@@ -20,7 +20,6 @@ let
       ps.torch
       ps.torchvision
       ps.torchaudio
-      tensorboardx
 
       # large language models
       # sentence-transformers

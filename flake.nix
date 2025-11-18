@@ -20,7 +20,7 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [];
+        overlays = [ ];
       };
 
       baseModules = [
@@ -56,7 +56,6 @@
         inherit system pkgs;
         modules = baseModules ++ [
           ./modules/python.nix
-          ./modules/haskell.nix
           ./modules/go.nix
           (
             { ... }:
@@ -67,7 +66,6 @@
                 vim
                 rclone
                 protobuf
-                parquet-tools
 
                 clang-tools
                 # cmake
@@ -91,11 +89,14 @@
                 gemini-cli
                 claude-code
 
+                tree
+
                 texliveFull
+                tex-fmt
 
                 # For development
                 uv
-                jdk24
+                jdk
                 ocaml
                 php
               ];
