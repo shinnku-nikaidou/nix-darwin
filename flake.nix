@@ -98,7 +98,6 @@
                 uv
                 jdk
                 ocaml
-                php
               ];
             }
           )
