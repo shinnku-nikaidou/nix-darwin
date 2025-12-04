@@ -68,8 +68,8 @@
                 protobuf
 
                 clang-tools
-                # cmake
-                # ninja
+                cmake
+                ninja
 
                 htop
                 btop
