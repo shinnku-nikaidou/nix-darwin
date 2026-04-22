@@ -5,7 +5,6 @@ let
     paths = with pkgs; [
       go
       gopls
-      gotools
       delve
     ];
   };

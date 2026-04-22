@@ -61,7 +61,7 @@
             { ... }:
             {
               environment.systemPackages = with pkgs; [
-                nixfmt-rfc-style
+                nixfmt
                 helix
                 vim
                 rclone
@@ -108,7 +108,6 @@
         packages = [
           pkgs.go
           pkgs.gopls
-          pkgs.gotools
           pkgs.delve
         ];
         GOPATH = "$HOME/go";
