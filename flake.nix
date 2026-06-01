@@ -67,6 +67,8 @@
                 rclone
                 protobuf
 
+                codex
+
                 clang-tools
                 cmake
                 ninja
